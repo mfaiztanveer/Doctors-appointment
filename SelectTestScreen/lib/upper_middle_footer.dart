@@ -64,65 +64,78 @@ class UpperPart extends StatelessWidget {
         ),
         color: Color(0xFF3E64FF),
       ),
-      child: Column(
+      child: Stack(
         children: [
-          SizedBox(height: 40),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
+          Positioned(
+            top: 15,
+            left: 6,
+            child: GestureDetector(
+              onTap: () {
+                // Handle back button tap
+              },
+              child: Container(
                 width: 48,
                 height: 48,
-                padding: const EdgeInsets.all(12),
+                padding: const EdgeInsets.all(10),
                 clipBehavior: Clip.antiAlias,
                 decoration: ShapeDecoration(
                   shape: RoundedRectangleBorder(
-                    side: BorderSide(width: 1, color: Colors.white),
+                    side: BorderSide(width: 1.5, color: Colors.white),
                     borderRadius: BorderRadius.circular(18),
                   ),
                 ),
                 child: Icon(Icons.arrow_back, color: Colors.white),
               ),
-              SizedBox(width: 30),
-              Container(
-                width: 225,
-                child: Text(
-                  'Select Test',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    decoration: TextDecoration.none,
-                    color: Colors.white,
-                    fontSize: 36,
-                    fontFamily: 'nunito-extrabold',
-                    fontWeight: FontWeight.w800,
-                    height: 0,
-                    letterSpacing: -0.32,
-                  ),
+            ),
+          ),
+          Positioned(
+            top: 60,
+            left: MediaQuery.of(context).size.width / 2 - 112.5,
+            child: Container(
+              width: 225,
+              child: Text(
+                'Select Test',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  decoration: TextDecoration.none,
+                  color: Colors.white,
+                  fontSize: 36,
+                  fontFamily: 'nunito-extrabold',
+                  fontWeight: FontWeight.w800,
+                  height: 0,
+                  letterSpacing: -0.32,
                 ),
               ),
-            ],
+            ),
           ),
-          SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: TextField(
-              onChanged: (value) {
-                // Handle search text bar
-              },
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.search),
-                suffixIcon: GestureDetector(
-                  onTap: () {
-                    // Handle filter list tap
+          Positioned(
+            top: 120,
+            left: 20,
+            right: 20,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Container(
+                width: double.infinity, // Set the width to expand to the available space
+                child: TextField(
+                  onChanged: (value) {
+                    // Handle search text bar
                   },
-                  child: Icon(Icons.filter_list),
-                ),
-                hintText: 'Search...',
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(25),
-                  borderSide: BorderSide.none,
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.search),
+                    suffixIcon: GestureDetector(
+                      onTap: () {
+                        // Handle filter list tap
+                      },
+                      child: Icon(Icons.filter_list),
+                    ),
+                    hintText: 'Search...',
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(25),
+                      borderSide: BorderSide.none,
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -132,6 +145,7 @@ class UpperPart extends StatelessWidget {
     );
   }
 }
+
 
 class MiddlePart extends StatelessWidget {
   final List<String> testIcons;
