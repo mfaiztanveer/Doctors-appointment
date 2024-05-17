@@ -61,12 +61,13 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - images/icons8-allergy-32.png
-   - images/icons8-brain-32.png
-   - images/icons8-heart-monitor-32.png
-   - images/icons8-laboratory-32.png
-   - images/icons8-lungs-32.png
-   - images/icons-dna-32.png
+   - images/blood-analysis.png
+   - images/endocrine.png
+   - images/kidney.png
+   - images/lipid.png
+   - images/liver.png
+   - images/thyroid-gland.png
+   - images/urine.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
